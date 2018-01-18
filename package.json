@@ -33,6 +33,7 @@
   },
   "homepage": "https://github.com/Juceztp/boilerplate-frontend#readme",
   "devDependencies": {
+    "ajv": "^6.0.1",
     "autoprefixer": "^7.2.5",
     "babel-cli": "^6.26.0",
     "babel-eslint": "^8.2.1",
@@ -53,8 +54,6 @@
   },
   "dependencies": {},
   "pre-commit": [
-    "lint",
-    "validate",
-    "test"
+    "lint"
   ]
 }
