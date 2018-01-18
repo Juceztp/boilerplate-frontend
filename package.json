@@ -54,6 +54,7 @@
   },
   "dependencies": {},
   "pre-commit": [
-    "lint"
+    "lint",
+    "test"
   ]
 }
