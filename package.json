@@ -1,0 +1,53 @@
+{
+  "name": "boilerplate-frontend",
+  "version": "0.0.1",
+  "description": "Boilerplate npm",
+  "main": "index.js",
+  "scripts": {
+    "css": "node-sass --o dist/css src/scss --output-style compressed --source-map-embed",
+    "autoprefixer": "postcss -u autoprefixer --autoprefixer.browser '> 5%, ie 9' -r dist/css/*",
+    "build:css": "npm run css && npm run autoprefixer",
+    "js": "babel src/js --out-dir dist/js",
+    "watch:css": "onchange src/scss/*.scss -- npm run build:css",
+    "watch:js": "onchange src/js/*.js -- npm run js",
+    "serve": "browser-sync start --server dist --files dist",
+    "dev": "parallelshell 'npm run watch:css' 'npm run watch:js' 'npm run serve'",
+    "lint:sass": "sass-lint src/**/*.scss -v -q",
+    "lint:js": "eslint src/js/**/*.js",
+    "lint": "npm run lint:sass && npm run lint:js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Juceztp/boilerplate-frontend.git"
+  },
+  "keywords": [
+    "boilerplate",
+    "npm",
+    "frontend"
+  ],
+  "author": "Julio Peña",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Juceztp/boilerplate-frontend/issues"
+  },
+  "homepage": "https://github.com/Juceztp/boilerplate-frontend#readme",
+  "devDependencies": {
+    "autoprefixer": "^7.2.5",
+    "babel-cli": "^6.26.0",
+    "babel-eslint": "^8.2.1",
+    "babel-preset-es2015": "^6.24.1",
+    "browser-sync": "^2.23.5",
+    "eslint": "^4.15.0",
+    "eslint-config-standard": "^11.0.0-beta.0",
+    "eslint-plugin-import": "^2.8.0",
+    "eslint-plugin-node": "^5.2.1",
+    "eslint-plugin-promise": "^3.6.0",
+    "eslint-plugin-standard": "^3.0.1",
+    "node-sass": "^4.7.2",
+    "onchange": "^3.3.0",
+    "parallelshell": "^3.0.2",
+    "postcss-cli": "^4.1.1",
+    "sass-lint": "^1.12.1"
+  },
+  "dependencies": {}
+}
