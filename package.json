@@ -14,7 +14,8 @@
     "dev": "parallelshell 'npm run watch:css' 'npm run watch:js' 'npm run serve'",
     "lint:sass": "sass-lint src/**/*.scss -v -q",
     "lint:js": "eslint src/js/**/*.js",
-    "lint": "npm run lint:sass && npm run lint:js"
+    "lint": "npm run lint:sass && npm run lint:js",
+    "validate": "npm ls"
   },
   "repository": {
     "type": "git",
@@ -47,7 +48,13 @@
     "onchange": "^3.3.0",
     "parallelshell": "^3.0.2",
     "postcss-cli": "^4.1.1",
+    "precommit-hook": "^3.0.0",
     "sass-lint": "^1.12.1"
   },
-  "dependencies": {}
+  "dependencies": {},
+  "pre-commit": [
+    "lint",
+    "validate",
+    "test"
+  ]
 }
